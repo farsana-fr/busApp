@@ -1,0 +1,50 @@
+<div class="container">
+    <h1>Hello {{currentUser}}</h1>
+    <form [formGroup]="searchForm">
+        <div class="mb-3">
+            <label for="from" class="form-label">From</label>
+            <select formControlName="from" id="from" name="fromSelectName" class="form-select">
+              <option>Trivandrum</option>
+              <option>Kollam</option>
+              <option>Pathanamthitta</option>
+              <option>Alappuzha</option>
+              <option>Kottayam</option>
+              <option>Idukki</option>
+              <option>Kochi</option>
+              <option>Trissur</option>
+              <option>Palakkad</option>
+              <option>Malappuram</option>
+            </select>
+          </div>
+        <div class="mb-3">
+            <label for="to" class="form-label">To</label>
+            <select formControlName="to" id="to" name="toSelectName" class="form-select">
+              <option>Trivandrum</option>
+              <option>Kollam</option>
+              <option>Pathanamthitta</option>
+              <option>Alappuzha</option>
+              <option>Kottayam</option>
+              <option>Idukki</option>
+              <option>Kochi</option>
+              <option>Trissur</option>
+              <option>Palakkad</option>
+              <option>Malappuram</option>
+            </select>
+          </div>
+          <button type="button" class="btn btn-primary" (click)="search()">Search</button>
+    </form>
+
+</div>
+<div class="result container w-50"><h3>Search Result</h3>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Bus Details</h5>
+          <p class="card-text">Bus#:{{busNo}}</p>
+          <p class="card-text">Registration#:{{regNo}}</p>
+          <p class="card-text">From:{{from}}</p>
+          <p class="card-text">To:{{to}}</p>
+          <p class="card-text">Departure Time:{{dTime}}</p>
+        </div>
+      </div>
+</div>
+

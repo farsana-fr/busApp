@@ -1,0 +1,25 @@
+<!-- <div *ngFor="let i of buses">{{i.busNo}}</div> -->
+
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Bus#</th>
+            <th scope="col">Reg#</th>
+            <th scope="col">From</th>
+            <th scope="col">To</th>
+            <th scope="col">Departure Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let i of buses">
+            <th>{{i.busNo}}</th>
+            <td>{{i.regNo}}</td>
+            <td>{{i.from}}</td>
+            <td>{{i.to}}</td>
+            <td>{{i.departureTime}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+

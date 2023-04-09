@@ -1,0 +1,41 @@
+
+    <div class="row m-5" >
+    
+        <div class="home col-lg-5 m-1">
+            <h1>Login as Guest</h1>
+            
+            <form class="w-50" [formGroup]="guestForm">
+                <div class="mb-3 mt-5 ">
+                  <label for="name" class="form-label">Full Name</label>
+                  <input formControlName="name" type="text" class="form-control" id="name" name="nameName">
+                </div>
+                <div *ngIf="this.guestForm.get('name')?.errors && this.guestForm.get('name')?.touched">
+                    <p class="text-danger">Enter Name without space</p>
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email address</label>
+                  <input formControlName="email" type="email" class="form-control" id="email" name="emailName">
+                </div>
+                <div *ngIf="this.guestForm.get('email')?.errors && this.guestForm.get('email')?.touched">
+                    <p class="text-danger">Enter a valid email address</p>
+                </div>
+                <button class="btn btn-success" (click)="guestLogin()">Guest Login</button>
+            </form>
+            
+        </div>
+        <div class="home col-lg-5 m-1">
+            <h1>Login as Admin</h1>
+            <form class="w-50" [formGroup]="adminForm">
+                <div class="mb-3 mt-5">
+                  <label for="email" class="form-label">Email address</label>
+                  <input formControlName="email" type="email" class="form-control" id="email" name="emailName">
+                </div>
+                <div class="mb-3">
+                  <label for="pwd" class="form-label">Password</label>
+                  <input formControlName="pwd" type="password" class="form-control" id="pwd" name="pwdName">
+                </div>
+                <button type="submit" class="btn btn-primary" (click)="adminLogin()">Submit</button>
+              </form>
+        </div>
+    </div>
+

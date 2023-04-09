@@ -1,0 +1,48 @@
+<div class="container bg-light rounded-5 p-3">
+    <form class="w-50" [formGroup]="addForm">
+        <div class="mb-3 mt-5 ">
+          <label for="busNo" class="form-label">Bus Number</label>
+          <input formControlName="busNo" type="text" class="form-control" id="busNo" name="busNoName">
+        </div>
+        <div class="mb-3">
+          <label for="regNo" class="form-label">Registration Number</label>
+          <input formControlName="regNo" type="text" class="form-control" id="regNo" name="regNoName">
+        </div>
+        <div class="mb-3">
+            <label for="from" class="form-label">From</label>
+            <select formControlName="from" id="from" name="fromSelectName" class="form-select">
+                <option>Trivandrum</option>
+                <option>Kollam</option>
+                <option>Pathanamthitta</option>
+                <option>Alappuzha</option>
+                <option>Kottayam</option>
+                <option>Idukki</option>
+                <option>Kochi</option>
+                <option>Trissur</option>
+                <option>Palakkad</option>
+                <option>Malappuram</option>
+              </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="to" class="form-label">To</label>
+            <select formControlName="to" id="to" name="toSelectName" class="form-select">
+                <option>Trivandrum</option>
+                <option>Kollam</option>
+                <option>Pathanamthitta</option>
+                <option>Alappuzha</option>
+                <option>Kottayam</option>
+                <option>Idukki</option>
+                <option>Kochi</option>
+                <option>Trissur</option>
+                <option>Palakkad</option>
+                <option>Malappuram</option>
+              </select>
+          </div>
+          <div class="mb-3">
+            <label for="dTime" class="form-label">Departure Time</label>
+            <input formControlName="dTime" type="text" class="form-control" id="dTime" name="dTime">
+          </div>
+        <button class="btn btn-success" (click)="addBus()">Done</button>
+    </form>
+</div>
