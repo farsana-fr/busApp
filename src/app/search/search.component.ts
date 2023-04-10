@@ -33,6 +33,7 @@ export class SearchComponent {
     let to:any=this.searchForm.value.to;
     this.ds.search(from,to).subscribe((result:any)=>
       {
+        console.log(result);
         if(result.status)
         {
           this.busNo=result.message.busNo
@@ -45,8 +46,11 @@ export class SearchComponent {
         {
           alert("Bus Not Found")
         }
-      },result=>
-      alert("Please Select"));
+      },
+      result=>{
+        console.log(result.error);
+        alert(result.error.message)
+      });
     
   }
 }
