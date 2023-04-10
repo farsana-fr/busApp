@@ -17,6 +17,10 @@ export class AdminpanelComponent {
   {
     this.router.navigateByUrl('addBus')
   }
+  deleteBus()
+  {
+    this.router.navigateByUrl('delete')
+  }
   viewAll()
   {
     // this.ds.buses=this.ds.busDetails;

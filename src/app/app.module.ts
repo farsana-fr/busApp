@@ -10,6 +10,7 @@ import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 import { AddComponent } from './add/add.component';
 import { ViewComponent } from './view/view.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DeleteComponent } from './delete/delete.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     SearchComponent,
     AdminpanelComponent,
     AddComponent,
-    ViewComponent
+    ViewComponent,
+    DeleteComponent
   ],
   imports: [
     BrowserModule,

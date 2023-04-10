@@ -44,26 +44,6 @@ export class DataService {
 const data={from:from,to:to}
 console.log(data);
 return this.http.post('http://localhost:3000/search',data);
-    // let found = 0;
-    // var busDetails = this.busDetails;
-    // for (let i in busDetails) {
-    //   if (from == busDetails[i].from && to == busDetails[i].to) {
-    //     found = parseInt(i);
-    //   }
-    // }
-    // if (found) {
-    //   return {
-    //     status: true,
-    //     message: busDetails[found],
-    //     statusCode: 200,
-    //   };
-    // } else {
-    //   return {
-    //     status: false,
-    //     message: `Not Found`,
-    //     statusCode: 404,
-    //   };
-    // }
    };
 
 
@@ -77,28 +57,9 @@ return this.http.post('http://localhost:3000/search',data);
 return this.http.post('http://localhost:3000/addBus',data);
     }
 
-//     var busDetails = this.busDetails;
-//     console.log(busDetails);
-//     if (busNo in busDetails) {
-//       return {
-//         status: false,
-//         message: 'Bus No Already Exists',
-//         statusCode: 403,
-//       };
-//     } else {
-//       busDetails[busNo] = {
-//         busNo: busNo,
-//         regNo: regNo,
-//         from: from,
-//         to: to,
-//         departTime: dTime,
-//       };
-//       console.log(busDetails);
-//       return {
-//         status: true,
-//         message: `Added New Bus`,
-//         statusCode: 200,
-//       };
-//     }
-//   }
+  deleteBus=(busNo:any)=>{
+      const data={busNo:busNo};
+      return this.http.post('http://localhost:3000/delete',data)
+    }
 }
+
