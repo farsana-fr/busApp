@@ -1,0 +1,21 @@
+<form class="container w-50">
+    <div class="mb-3 mt-5">
+      <label for="busNo" class="form-label">Enter Bus Number</label>
+      <input type="text" class="form-control" id="busNo" name="busNoName" [(ngModel)]="busNo">
+    </div>
+    <div class="mb-3">
+        <label for="to" class="form-label">Select Field</label>
+        <select  id="to" name="toSelectName" class="form-select" [(ngModel)]="key">
+          <!-- <option></option> -->
+          <option>regNo</option>
+          <option>from</option>
+          <option>to</option>
+          <option>dTime</option>
+        </select>
+    </div>
+    <div class="mb-3 mt-5">
+        <label for="value" class="form-label">Enter Field Value</label>
+        <input type="text" class="form-control" id="value" name="valueName" [(ngModel)]="value">
+      </div>
+    <button type="submit" class="btn btn-violet" (click)="update()">Update</button>
+</form>

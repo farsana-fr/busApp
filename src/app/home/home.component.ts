@@ -25,14 +25,18 @@ export class HomeComponent {
       pwd:['',[Validators.required]]
     }
   );
-
+  
+  email: any;
+  uName:any
   
   guestLogin()
   {
     if(this.guestForm.valid)
     {
-      this.ds.currentUser=this.guestForm.value.name;
-      localStorage.setItem("currentUser",this.ds.currentUser)
+      this.uName=this.guestForm.value.name;
+      this.email=this.guestForm.value.email;
+      localStorage.setItem("uName",this.uName)
+      localStorage.setItem("email",this.email)
       this.route.navigateByUrl('search');
     }
     else

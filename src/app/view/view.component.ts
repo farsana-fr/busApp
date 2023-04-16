@@ -8,7 +8,8 @@ import { DataService } from '../service/data.service';
 })
 export class ViewComponent {
   constructor(private ds:DataService){
-
+    this.ds.view
   }
   buses:any=Object.values(this.ds.busDetails);
+
 }

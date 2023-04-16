@@ -38,7 +38,7 @@ export class DataService {
     },
   };
 
-  currentUser: any;
+  
   
   search = (from: any, to: any) => {
 const data={from:from,to:to}
@@ -60,6 +60,29 @@ return this.http.post('http://localhost:3000/addBus',data);
   deleteBus=(busNo:any)=>{
       const data={busNo:busNo};
       return this.http.post('http://localhost:3000/delete',data)
+    }
+
+    bookBus=(busNo:any,regNo:any,from:any,to:any,dTime:any,email:any,uName:any)=>{
+      const data={busNo:busNo,regNo:regNo,from:from,to:to,dTime:dTime,email:email,uName:uName};
+      return this.http.post('http://localhost:3000/bookBus',data)
+    }
+    book=(email:any)=>{
+      const data={email:email};
+      return this.http.post('http://localhost:3000/book',data)
+    }
+
+    update=(busNo:any,obj:any)=>{
+      const data={busNo:busNo,obj:obj};
+      console.log("UPDATE OBJ ",obj);
+      console.log(data);
+      return this.http.post('http://localhost:3000/updateBus',data)
+    }
+
+    view=(busNo:any,obj:any)=>{
+      const data={busNo:busNo,obj:obj};
+      console.log("UPDATE OBJ ",obj);
+      console.log(data);
+      return this.http.post('http://localhost:3000/updateBus',data)
     }
 }
 

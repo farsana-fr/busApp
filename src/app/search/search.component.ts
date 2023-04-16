@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { DataService } from '../service/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -8,7 +9,7 @@ import { DataService } from '../service/data.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent {
-  constructor(private fb:FormBuilder,private ds:DataService){
+  constructor(private fb:FormBuilder,private ds:DataService,private route:Router){
   }
   searchForm=this.fb.group(
     {
@@ -16,7 +17,8 @@ export class SearchComponent {
       to:['']
     }
   )
-  currentUser=localStorage.getItem("currentUser");
+  uName=localStorage.getItem("uName");
+  email=localStorage.getItem("email");
   // result:any
   busNo:any
   regNo:any
@@ -24,6 +26,7 @@ export class SearchComponent {
   to:any
   dTime:any
   errorNF:any
+  
 
   
   search()
@@ -41,16 +44,46 @@ export class SearchComponent {
       this.from=result.message.from
       this.to=result.message.to
       this.dTime=result.message.departureTime
+      localStorage.setItem("busNo",this.busNo);
         }
         else
         {
           alert("Bus Not Found")
+          this.busNo=this.regNo=this.from=this.to=this.dTime='';
+
         }
       },
       result=>{
+        this.busNo=this.regNo=this.from=this.to=this.dTime='';
         console.log(result.error);
         alert(result.error.message)
       });
     
+  }
+
+  book()
+  {
+    console.log("this.busNo",this.busNo);
+    console.log("this.regNo",this.regNo);
+    console.log("this.from",this.from);
+    console.log("this.to",this.to);
+    // 
+    this.ds.bookBus(this.busNo,this.regNo,this.from,this.to,this.dTime,this.email,this.uName).subscribe((result:any)=>{
+      localStorage.setItem("ticket",result.message);
+      console.log("LINE 21 result--",result.message.ticket);
+      if(result.status)
+      {
+        this.busNo=result.message.ticket.busNo
+    this.regNo=result.message.regNo
+    this.from=result.message.from
+    this.to=result.message.to
+    this.dTime=result.message.departureTime
+    localStorage.setItem("busNo",this.busNo);
+      }
+    })
+    alert("Booked")
+    // this.route.navigateByUrl('book')
+    // this.ds.book(this.busNo,this.regNo,this.from,this.to,this.dTime,this.email,this.uName).subscribe((result:any)=>{
+   
   }
 }

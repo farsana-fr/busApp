@@ -1,23 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Alkatra&display=swap');
 body{
-    height: 100vh;
     color:white;
     font-family: 'Alkatra', cursive;
 }
+
 header
 {
-    height:80px;
+    background-color: rgba(41, 38, 104, 0.862);
+    /* height:80px; */
 }
 footer
 {
     height:30px;
+    background-color: rgba(14, 14, 14, 0.8);
     position: absolute;
-    bottom:0;
+    bottom: 0;
     width:100%
 }
+
 .background
 {
-    background-image: url(./assets/wall.jpg);
-    background-repeat:no-repeat;
+    background-image: url(./assets/wallp.jpg);
+    /* background-repeat:no-repeat; */
     background-size: cover;
+}
+.s1
+{
+    opacity: 0;
+}
+@media(max-width:600px)
+{
+    footer
+{
+    height:30vh;
+    background-color: rgba(14, 14, 14, 0.8);
+    /* position: absolute;
+    bottom: 0; */
+    width:100%
+}
+
+}
+.btn-violet
+{
+    background-color: rgba(58, 55, 155, 0.437);
+    width: 50%;
+    color: white;
 }

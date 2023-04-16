@@ -11,6 +11,8 @@ import { AddComponent } from './add/add.component';
 import { ViewComponent } from './view/view.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DeleteComponent } from './delete/delete.component';
+import { BookComponent } from './book/book.component';
+import { UpdateComponent } from './update/update.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { DeleteComponent } from './delete/delete.component';
     AdminpanelComponent,
     AddComponent,
     ViewComponent,
-    DeleteComponent
+    DeleteComponent,
+    BookComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,

@@ -42,8 +42,12 @@
           </div>
           <div class="mb-3">
             <label for="dTime" class="form-label">Departure Time</label>
+            
+              <p class="text-danger">Please enter as following format: 10:00AM</p>
+           
             <input formControlName="dTime" type="text" class="form-control" id="dTime" name="dTime">
           </div>
+
         <button class="btn btn-success" (click)="addBus()">Done</button>
     </form>
 </div>

@@ -1,5 +1,8 @@
 <div class="container">
-    <h2>Hello {{currentUser}}</h2>
+    <h2>Hello {{uName}}</h2>
+    <div class="myTkt text-center bg-white container w-50" >
+      <a routerLink="/book">View My Tickets</a>
+    </div>
     <form [formGroup]="searchForm">
         <div class="mb-3">
             <label for="from" class="form-label">From</label>
@@ -35,8 +38,8 @@
     </form>
 
 </div>
-<div class="result container"><h3>Search Result</h3>
-    <div class="card" style="width: 30rem;">
+<div [ngClass]="busNo?'':'s1'" class="result container"><h3>Search Result</h3>
+    <div class="card">
         <div class="card-body">
           <h5 class="card-title">Bus Details</h5>
           <p class="card-text">Bus#:{{busNo}}</p>
@@ -44,7 +47,9 @@
           <p class="card-text">From:{{from}}</p>
           <p class="card-text">To:{{to}}</p>
           <p class="card-text">Departure Time:{{dTime}}</p>
+          <button class="btn btn-success mt-2" (click)="book()">Book</button>
         </div>
       </div>
+      
 </div>
 

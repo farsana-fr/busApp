@@ -4,20 +4,16 @@
     <table class="table text-white bg-black">
         <thead>
           <tr>
-            <th scope="col">Bus#</th>
-            <th scope="col">Reg#</th>
-            <th scope="col">From</th>
-            <th scope="col">To</th>
-            <th scope="col">Departure Time</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Ticket</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let i of buses">
-            <th>{{i.busNo}}</th>
-            <td>{{i.regNo}}</td>
-            <td>{{i.from}}</td>
-            <td>{{i.to}}</td>
-            <td>{{i.departureTime}}</td>
+            <th>{{i.name}}</th>
+            <td>{{i.email}}</td>
+            <td>{{i.ticket}}</td>
           </tr>
         </tbody>
       </table>

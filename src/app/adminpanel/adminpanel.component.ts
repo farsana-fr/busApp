@@ -21,9 +21,9 @@ export class AdminpanelComponent {
   {
     this.router.navigateByUrl('delete')
   }
-  viewAll()
+  updateBus()
   {
     // this.ds.buses=this.ds.busDetails;
-    this.router.navigateByUrl('view')
+    this.router.navigateByUrl('updateBus')
   }
 }

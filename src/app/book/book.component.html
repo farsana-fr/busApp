@@ -1,0 +1,14 @@
+<div  class="result container"><h3>Ticket Details</h3>
+    <div class="card text-dark" *ngFor="let i of ticketDet">
+        <div class="card-body">
+          <p class="card-text">Passenger Name: {{uName}}</p>
+          <p class="card-text">Bus#: {{i.busNo}}</p>
+          <p class="card-text">Registration#: {{i.regNo}}</p>
+          <p class="card-text">From: {{i.from}}</p>
+          <p class="card-text">To: {{i.to}}</p>
+          <p class="card-text">Departure Time: {{i.dTime}}</p>
+          
+        </div>
+      </div>
+      
+</div>
