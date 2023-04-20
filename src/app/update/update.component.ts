@@ -18,12 +18,14 @@ export class UpdateComponent {
   }
   update()
   {
+    let flag=false;
     console.log("INSIDE update TS",this.key);
     if((this.key)=="regNo")
     {
       
       this.ds.update(this.busNo,{"regNo":this.value}).subscribe((result:any)=>{
         console.log(result);
+        flag=result.status;
       });
       console.log("REGNO");
     }
@@ -31,6 +33,7 @@ export class UpdateComponent {
     {
       this.ds.update(this.busNo,{"from":this.value}).subscribe((result:any)=>{
         console.log(result);
+        flag=result.status;
       })
       console.log("FROM");
     }
@@ -38,6 +41,7 @@ export class UpdateComponent {
     {
       this.ds.update(this.busNo,{"to":this.value}).subscribe((result:any)=>{
         console.log(result);
+        flag=result.status;
       })
       console.log("TO");
       
@@ -46,8 +50,14 @@ export class UpdateComponent {
     {
       this.ds.update(this.busNo,{"dTime":this.value}).subscribe((result:any)=>{
         console.log(result);
+        flag=result.status;
+        
       })
       console.log("DTIME");
+    }
+    if(flag)
+    {
+      alert("Updated")
     }
     
   }

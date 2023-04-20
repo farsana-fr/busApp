@@ -26,4 +26,8 @@ export class AdminpanelComponent {
     // this.ds.buses=this.ds.busDetails;
     this.router.navigateByUrl('updateBus')
   }
+  logout()
+  {
+    this.router.navigateByUrl('')
+  }
 }

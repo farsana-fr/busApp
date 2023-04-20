@@ -1,8 +1,16 @@
-<div class="container">
+<nav class="navbar bg-body-tertiary">
+  <div class="container">
+    <a class="navbar-brand"></a>
+    <form class="d-flex" role="search">
+      <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+      <button class="btn btn-violet w-100" type="submit"><a class="text-decoration-none text-white" routerLink="/book">View My Tickets</a></button>
+      <button class="btn btn-danger ms-5" type="submit" (click)="logout()">Logout</button>
+      
+    </form>
+  </div>
+</nav>
+<div class="container searchBox p-5 rounded-5">
     <h2>Hello {{uName}}</h2>
-    <div class="myTkt text-center bg-white container w-50" >
-      <a routerLink="/book">View My Tickets</a>
-    </div>
     <form [formGroup]="searchForm">
         <div class="mb-3">
             <label for="from" class="form-label">From</label>
@@ -17,6 +25,10 @@
               <option>Trissur</option>
               <option>Palakkad</option>
               <option>Malappuram</option>
+              <option>Kozhikode</option>
+              <option>Kannur</option>
+              <option>Wayanad</option>
+              <option>Kasargod</option>
             </select>
           </div>
         <div class="mb-3">
@@ -32,6 +44,10 @@
               <option>Trissur</option>
               <option>Palakkad</option>
               <option>Malappuram</option>
+              <option>Kozhikode</option>
+              <option>Kannur</option>
+              <option>Wayanad</option>
+              <option>Kasargod</option>
             </select>
           </div>
           <button type="button" class="btn btn-primary" (click)="search()">Search</button>
@@ -39,7 +55,7 @@
 
 </div>
 <div [ngClass]="busNo?'':'s1'" class="result container"><h3>Search Result</h3>
-    <div class="card">
+    <div class="card mb-5">
         <div class="card-body">
           <h5 class="card-title">Bus Details</h5>
           <p class="card-text">Bus#:{{busNo}}</p>

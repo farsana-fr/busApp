@@ -63,14 +63,8 @@ export class SearchComponent {
 
   book()
   {
-    console.log("this.busNo",this.busNo);
-    console.log("this.regNo",this.regNo);
-    console.log("this.from",this.from);
-    console.log("this.to",this.to);
     // 
     this.ds.bookBus(this.busNo,this.regNo,this.from,this.to,this.dTime,this.email,this.uName).subscribe((result:any)=>{
-      localStorage.setItem("ticket",result.message);
-      console.log("LINE 21 result--",result.message.ticket);
       if(result.status)
       {
         this.busNo=result.message.ticket.busNo
@@ -85,5 +79,13 @@ export class SearchComponent {
     // this.route.navigateByUrl('book')
     // this.ds.book(this.busNo,this.regNo,this.from,this.to,this.dTime,this.email,this.uName).subscribe((result:any)=>{
    
+  }
+
+  logout()
+  {
+    localStorage.removeItem("uName")
+    localStorage.removeItem("email")
+    localStorage.removeItem("busNo")
+    this.route.navigateByUrl('')
   }
 }
